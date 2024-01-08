@@ -1,20 +1,18 @@
 #!/usr/bin/python3
-"""Script to determine pascal triangle"""
+"""Triangle Triangle"""
 
 
 def pascal_triangle(n):
-    """return list representing pascal triangle
-    """
-    triangle = []
-
+    """Triangle"""
     if n <= 0:
         return []
-    for i in range(n):
-        temp_list = []
-        for j in range(i + 1):
-            if j == 0 or j == i:
-                temp_list.append(1)
-            else:
-                temp_list .append(triangle[i-1][j-i] + triangle[i-][j])
-        triangle.append(temp_list)
-        return triangle
+    pas = [[1]]
+    for row_number in range(1, n):
+        row = [1]
+        for j in range(1, row_number):
+            element = pas[row_number - 1][j - 1] + pas[row_number - 1][j]
+            row.append(element)
+        row.append(1)
+        pas.append(row)
+
+    return pas
