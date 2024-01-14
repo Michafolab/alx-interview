@@ -12,7 +12,7 @@ def canUnlockAll(boxes):
     setofkeys = [0]
     counter = 0
 
-    while index < total_box:
+    while index < len(setofkeys):
         set_key = setofkeys[index]
         for key in boxes[set_key]:
             if 0 < key < total_box and key not in setofkeys:
